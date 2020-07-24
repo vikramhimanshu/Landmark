@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,16 @@
 		AF9A1D0F24C887BC00D42674 /* LandmarkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D0E24C887BC00D42674 /* LandmarkTests.swift */; };
 		AF9A1D1A24C887BC00D42674 /* LandmarkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D1924C887BC00D42674 /* LandmarkUITests.swift */; };
 		AF9A1D2824C8882A00D42674 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF9A1D2724C8882900D42674 /* GoogleService-Info.plist */; };
+		AF9A1D2C24C8946600D42674 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9A1D2B24C8946600D42674 /* LoginStoryboard.storyboard */; };
+		AF9A1D2E24C8991100D42674 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D2D24C8991100D42674 /* LoginViewController.swift */; };
+		AF9A1D3024C9477E00D42674 /* CreateNote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9A1D2F24C9477E00D42674 /* CreateNote.storyboard */; };
+		AF9A1D3224C95F2600D42674 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D3124C95F2600D42674 /* CreateNoteViewController.swift */; };
+		AF9A1D3424C9608F00D42674 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9A1D3324C9608F00D42674 /* Map.storyboard */; };
+		AF9A1D3624C9629900D42674 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D3524C9629900D42674 /* Note.swift */; };
+		AF9A1D3924C9CEE400D42674 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D3824C9CEE400D42674 /* LoginInteractor.swift */; };
+		AF9A1D3B24C9CEF400D42674 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D3A24C9CEF400D42674 /* LoginPresenter.swift */; };
+		AF9A1D3D24C9CF2B00D42674 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D3C24C9CF2B00D42674 /* LoginViewModel.swift */; };
+		AF9A1D3F24C9CF4700D42674 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D3E24C9CF4700D42674 /* LoginEntity.swift */; };
 		F955981523E7558A25C94666 /* Pods_Landmark_LandmarkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2982B66538866C199733E0 /* Pods_Landmark_LandmarkUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +58,7 @@
 		714558D0BC6E2EA71D7A5297 /* Pods-Landmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark.debug.xcconfig"; path = "Target Support Files/Pods-Landmark/Pods-Landmark.debug.xcconfig"; sourceTree = "<group>"; };
 		9B58B49EED9679B71725B4B0 /* Pods_LandmarkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LandmarkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BADC753361ED569143C5A0D /* Pods-Landmark-LandmarkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark-LandmarkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Landmark-LandmarkUITests/Pods-Landmark-LandmarkUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		AF9A1CF224C887B400D42674 /* Landmark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmark.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF9A1CF224C887B400D42674 /* Landmark Remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark Remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9A1CF524C887B400D42674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9A1CF724C887B400D42674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AF9A1CF924C887B400D42674 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +74,16 @@
 		AF9A1D1924C887BC00D42674 /* LandmarkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkUITests.swift; sourceTree = "<group>"; };
 		AF9A1D1B24C887BC00D42674 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF9A1D2724C8882900D42674 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF9A1D2B24C8946600D42674 /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		AF9A1D2D24C8991100D42674 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AF9A1D2F24C9477E00D42674 /* CreateNote.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateNote.storyboard; sourceTree = "<group>"; };
+		AF9A1D3124C95F2600D42674 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
+		AF9A1D3324C9608F00D42674 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
+		AF9A1D3524C9629900D42674 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		AF9A1D3824C9CEE400D42674 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		AF9A1D3A24C9CEF400D42674 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		AF9A1D3C24C9CF2B00D42674 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AF9A1D3E24C9CF4700D42674 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
 		CA85E8A8C8F715408CC865EF /* Pods-LandmarkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandmarkTests.release.xcconfig"; path = "Target Support Files/Pods-LandmarkTests/Pods-LandmarkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,7 +140,7 @@
 		AF9A1CF324C887B400D42674 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF9A1CF224C887B400D42674 /* Landmark.app */,
+				AF9A1CF224C887B400D42674 /* Landmark Remark.app */,
 				AF9A1D0A24C887BC00D42674 /* LandmarkTests.xctest */,
 				AF9A1D1524C887BC00D42674 /* LandmarkUITests.xctest */,
 			);
@@ -139,6 +159,11 @@
 				AF9A1D0224C887BC00D42674 /* LaunchScreen.storyboard */,
 				AF9A1D2724C8882900D42674 /* GoogleService-Info.plist */,
 				AF9A1D0524C887BC00D42674 /* Info.plist */,
+				AF9A1D3724C9CEC000D42674 /* Login Module */,
+				AF9A1D2F24C9477E00D42674 /* CreateNote.storyboard */,
+				AF9A1D3124C95F2600D42674 /* CreateNoteViewController.swift */,
+				AF9A1D3324C9608F00D42674 /* Map.storyboard */,
+				AF9A1D3524C9629900D42674 /* Note.swift */,
 			);
 			path = Landmark;
 			sourceTree = "<group>";
@@ -161,6 +186,19 @@
 			path = LandmarkUITests;
 			sourceTree = "<group>";
 		};
+		AF9A1D3724C9CEC000D42674 /* Login Module */ = {
+			isa = PBXGroup;
+			children = (
+				AF9A1D2B24C8946600D42674 /* LoginStoryboard.storyboard */,
+				AF9A1D2D24C8991100D42674 /* LoginViewController.swift */,
+				AF9A1D3824C9CEE400D42674 /* LoginInteractor.swift */,
+				AF9A1D3A24C9CEF400D42674 /* LoginPresenter.swift */,
+				AF9A1D3C24C9CF2B00D42674 /* LoginViewModel.swift */,
+				AF9A1D3E24C9CF4700D42674 /* LoginEntity.swift */,
+			);
+			path = "Login Module";
+			sourceTree = "<group>";
+		};
 		D101D1C855220F9F92CC6A4C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +209,6 @@
 				30CDD681A1EAA8031F3DAC23 /* Pods-LandmarkTests.debug.xcconfig */,
 				CA85E8A8C8F715408CC865EF /* Pods-LandmarkTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -194,7 +231,7 @@
 			);
 			name = Landmark;
 			productName = Landmark;
-			productReference = AF9A1CF224C887B400D42674 /* Landmark.app */;
+			productReference = AF9A1CF224C887B400D42674 /* Landmark Remark.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AF9A1D0924C887BC00D42674 /* LandmarkTests */ = {
@@ -285,8 +322,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9A1D0424C887BC00D42674 /* LaunchScreen.storyboard in Resources */,
+				AF9A1D3424C9608F00D42674 /* Map.storyboard in Resources */,
+				AF9A1D2C24C8946600D42674 /* LoginStoryboard.storyboard in Resources */,
 				AF9A1D2824C8882A00D42674 /* GoogleService-Info.plist in Resources */,
 				AF9A1D0124C887BC00D42674 /* Assets.xcassets in Resources */,
+				AF9A1D3024C9477E00D42674 /* CreateNote.storyboard in Resources */,
 				AF9A1CFF24C887B400D42674 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,8 +457,15 @@
 			files = (
 				AF9A1CF624C887B400D42674 /* AppDelegate.swift in Sources */,
 				AF9A1CF824C887B400D42674 /* SceneDelegate.swift in Sources */,
+				AF9A1D3624C9629900D42674 /* Note.swift in Sources */,
+				AF9A1D3B24C9CEF400D42674 /* LoginPresenter.swift in Sources */,
 				AF9A1CFA24C887B400D42674 /* MasterViewController.swift in Sources */,
+				AF9A1D3924C9CEE400D42674 /* LoginInteractor.swift in Sources */,
+				AF9A1D2E24C8991100D42674 /* LoginViewController.swift in Sources */,
+				AF9A1D3224C95F2600D42674 /* CreateNoteViewController.swift in Sources */,
+				AF9A1D3D24C9CF2B00D42674 /* LoginViewModel.swift in Sources */,
 				AF9A1CFC24C887B400D42674 /* DetailViewController.swift in Sources */,
+				AF9A1D3F24C9CF4700D42674 /* LoginEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +646,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.Landmark";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Landmark Remark";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -617,7 +664,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "-.Landmark";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Landmark Remark";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
