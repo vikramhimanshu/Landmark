@@ -7,12 +7,44 @@
 //
 
 import UIKit
-import FirebaseAuth.FIRUser
+import FirebaseAuth
+import FirebaseDatabase
+
+
+extension Note {
+    
+    init?(snapshot: DataSnapshot) {
+      guard
+        let value = snapshot.value as? [String: AnyObject],
+        let date = value["timestamp"] as? String,
+        let body = value["body"] as? String,
+        let email = value["username"] as? String,
+        let lat = value["latitude"] as? Double,
+        let long = value["longitude"] as? Double else {
+        return nil
+      }
+        
+        self.timestamp = date
+        self.body = body
+        self.username = email
+        self.latitude = lat
+        self.longitude = long
+    }
+    
+}
 
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Note]()
+    var objects = [Note]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private var databaseRef: DatabaseReference = Database.database().reference(withPath: "landmark-notes")
     
     public var currentUser: User? {
         didSet {
@@ -26,6 +58,7 @@ class MasterViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         let loginButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(loginButtonAction(_:)))
         navigationItem.leftBarButtonItem = loginButton
@@ -37,11 +70,27 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        databaseRef.observe(.value) { dataSnapshot in
+            var newNotes: [Note] = []
+            
+            for child in dataSnapshot.children {
+                if let snapshot = child as? DataSnapshot {
+                    if let note = Note(snapshot: snapshot) {
+                        newNotes.append(note)
+                    } else {
+                        print("Error converting data to Note object")
+                    }
+                }
+            }
+            self.objects = newNotes
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+        currentUser = FirebaseAuth.Auth.auth().currentUser
     }
 
     @objc func loginButtonAction(_ sender: UIBarButtonItem) {
@@ -86,7 +135,7 @@ class MasterViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let object = objects[indexPath.row]
-        cell.textLabel!.text = object.text
+        cell.textLabel!.text = object.timestamp.description
         return cell
     }
 

@@ -32,7 +32,6 @@ class LoginViewController: UITableViewController {
     
     func dismissSelf() {
         self.dismiss(animated : true) {
-            self.viewModel = nil
             self.presenter = nil
         }
     }

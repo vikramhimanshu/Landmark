@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3E231D1AED1AD383CAF06FAB /* Pods_LandmarkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B58B49EED9679B71725B4B0 /* Pods_LandmarkTests.framework */; };
 		5B710953CBEC277B6EAD11B5 /* Pods_Landmark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EEA32ABFCCA889D59E8781 /* Pods_Landmark.framework */; };
+		AF59E8C024CC436800302F94 /* ErrorViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59E8BF24CC436800302F94 /* ErrorViewEntity.swift */; };
 		AF9A1CF624C887B400D42674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1CF524C887B400D42674 /* AppDelegate.swift */; };
 		AF9A1CF824C887B400D42674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1CF724C887B400D42674 /* SceneDelegate.swift */; };
 		AF9A1CFA24C887B400D42674 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1CF924C887B400D42674 /* MasterViewController.swift */; };
@@ -29,6 +30,7 @@
 		AF9A1D3B24C9CEF400D42674 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D3A24C9CEF400D42674 /* LoginPresenter.swift */; };
 		AF9A1D3D24C9CF2B00D42674 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D3C24C9CF2B00D42674 /* LoginViewModel.swift */; };
 		AF9A1D3F24C9CF4700D42674 /* LoginEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1D3E24C9CF4700D42674 /* LoginEntity.swift */; };
+		AF9A1D4224CBE07D00D42674 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9A1D4124CBE07C00D42674 /* MapKit.framework */; };
 		F955981523E7558A25C94666 /* Pods_Landmark_LandmarkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2982B66538866C199733E0 /* Pods_Landmark_LandmarkUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,7 @@
 		714558D0BC6E2EA71D7A5297 /* Pods-Landmark.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark.debug.xcconfig"; path = "Target Support Files/Pods-Landmark/Pods-Landmark.debug.xcconfig"; sourceTree = "<group>"; };
 		9B58B49EED9679B71725B4B0 /* Pods_LandmarkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LandmarkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BADC753361ED569143C5A0D /* Pods-Landmark-LandmarkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark-LandmarkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Landmark-LandmarkUITests/Pods-Landmark-LandmarkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF59E8BF24CC436800302F94 /* ErrorViewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewEntity.swift; sourceTree = "<group>"; };
 		AF9A1CF224C887B400D42674 /* Landmark Remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark Remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9A1CF524C887B400D42674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9A1CF724C887B400D42674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		AF9A1D3A24C9CEF400D42674 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		AF9A1D3C24C9CF2B00D42674 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AF9A1D3E24C9CF4700D42674 /* LoginEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEntity.swift; sourceTree = "<group>"; };
+		AF9A1D4124CBE07C00D42674 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		CA85E8A8C8F715408CC865EF /* Pods-LandmarkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LandmarkTests.release.xcconfig"; path = "Target Support Files/Pods-LandmarkTests/Pods-LandmarkTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9A1D4224CBE07D00D42674 /* MapKit.framework in Frameworks */,
 				5B710953CBEC277B6EAD11B5 /* Pods_Landmark.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,6 +123,7 @@
 		896011FC43C218D2A5E510E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF9A1D4124CBE07C00D42674 /* MapKit.framework */,
 				57EEA32ABFCCA889D59E8781 /* Pods_Landmark.framework */,
 				0A2982B66538866C199733E0 /* Pods_Landmark_LandmarkUITests.framework */,
 				9B58B49EED9679B71725B4B0 /* Pods_LandmarkTests.framework */,
@@ -160,10 +166,9 @@
 				AF9A1D2724C8882900D42674 /* GoogleService-Info.plist */,
 				AF9A1D0524C887BC00D42674 /* Info.plist */,
 				AF9A1D3724C9CEC000D42674 /* Login Module */,
-				AF9A1D2F24C9477E00D42674 /* CreateNote.storyboard */,
-				AF9A1D3124C95F2600D42674 /* CreateNoteViewController.swift */,
+				AF9A1D4024CB07B000D42674 /* Notes Module */,
 				AF9A1D3324C9608F00D42674 /* Map.storyboard */,
-				AF9A1D3524C9629900D42674 /* Note.swift */,
+				AF59E8BF24CC436800302F94 /* ErrorViewEntity.swift */,
 			);
 			path = Landmark;
 			sourceTree = "<group>";
@@ -197,6 +202,16 @@
 				AF9A1D3E24C9CF4700D42674 /* LoginEntity.swift */,
 			);
 			path = "Login Module";
+			sourceTree = "<group>";
+		};
+		AF9A1D4024CB07B000D42674 /* Notes Module */ = {
+			isa = PBXGroup;
+			children = (
+				AF9A1D3524C9629900D42674 /* Note.swift */,
+				AF9A1D2F24C9477E00D42674 /* CreateNote.storyboard */,
+				AF9A1D3124C95F2600D42674 /* CreateNoteViewController.swift */,
+			);
+			path = "Notes Module";
 			sourceTree = "<group>";
 		};
 		D101D1C855220F9F92CC6A4C /* Pods */ = {
@@ -464,6 +479,7 @@
 				AF9A1D2E24C8991100D42674 /* LoginViewController.swift in Sources */,
 				AF9A1D3224C95F2600D42674 /* CreateNoteViewController.swift in Sources */,
 				AF9A1D3D24C9CF2B00D42674 /* LoginViewModel.swift in Sources */,
+				AF59E8C024CC436800302F94 /* ErrorViewEntity.swift in Sources */,
 				AF9A1CFC24C887B400D42674 /* DetailViewController.swift in Sources */,
 				AF9A1D3F24C9CF4700D42674 /* LoginEntity.swift in Sources */,
 			);
@@ -570,7 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -624,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
