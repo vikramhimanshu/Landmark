@@ -33,10 +33,41 @@ extension Note {
     
 }
 
+extension MasterViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text, !text.isEmpty else { return }
+        filterContentForSearchText(text)
+    }
+}
+
+extension MasterViewController : UISearchControllerDelegate {
+
+    func willPresentSearchController(_ searchController: UISearchController){
+        print("\(type(of: self)) \(#function)")
+    }
+
+    func didPresentSearchController(_ searchController: UISearchController){
+        print("\(type(of: self)) \(#function)")
+    }
+
+    func willDismissSearchController(_ searchController: UISearchController){
+        print("\(type(of: self)) \(#function)")
+    }
+
+    func didDismissSearchController(_ searchController: UISearchController){
+        print("\(type(of: self)) \(#function)")
+        self.tableView.reloadData()
+    }
+
+    func presentSearchController(_ searchController: UISearchController){
+        print("\(type(of: self)) \(#function)")
+    }
+}
+
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
-    var objects = [Note]() {
+    private var detailViewController: DetailViewController? = nil
+    private var objects = [Note]() {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -55,6 +86,21 @@ class MasterViewController: UITableViewController {
         }
     }
     
+    //MARK:- SearchBar Properties
+    private var filteredObjects = [Note]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    private let searchController = UISearchController(searchResultsController: nil)
+    private var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    private var isSearchActive: Bool {
+        return searchController.isActive && !isSearchBarEmpty
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +110,8 @@ class MasterViewController: UITableViewController {
         navigationItem.leftBarButtonItem = loginButton
 
         let createNote = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeButtonAction(_:)))
-        navigationItem.rightBarButtonItem = createNote
+        let mapView = UIBarButtonItem(image: UIImage(systemName: "map"), style: .done, target: self, action: #selector(mapButtonAction(_:)))
+        navigationItem.rightBarButtonItems = [createNote, mapView]
         
         if let split = splitViewController {
             let controllers = split.viewControllers
@@ -85,8 +132,25 @@ class MasterViewController: UITableViewController {
             }
             self.objects = newNotes
         }
+        addSearchController()
     }
 
+    func addSearchController() {
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Type to search"
+        self.navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        filteredObjects = objects.filter { note -> Bool in
+            return (note.username.lowercased().contains(searchText.lowercased()) ||
+                note.body.lowercased().contains(searchText.lowercased()))
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
@@ -106,13 +170,27 @@ class MasterViewController: UITableViewController {
             
         }
     }
+    
+    @objc func mapButtonAction(_ sender: Any) {
+        let vc: UIViewController = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "MapViewController")
+        let mapvc = vc as! MapViewController
+        mapvc.notes = self.objects
+        self.present(vc, animated: true) {
+            
+        }
+    }
 
     // MARK: - Segues
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row]
+                var object: Note?
+                if isSearchActive {
+                    object = filteredObjects[indexPath.row]
+                } else {
+                    object = objects[indexPath.row]
+                }
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
@@ -129,16 +207,24 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if isSearchActive {
+            return filteredObjects.count
+        }
         return objects.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let object = objects[indexPath.row]
-        cell.textLabel!.text = object.timestamp.description
+        if isSearchActive {
+            let object = filteredObjects[indexPath.row]
+            cell.textLabel!.text = object.displayTitle
+        } else {
+            let object = objects[indexPath.row]
+            cell.textLabel!.text = object.displayTitle
+        }
         return cell
     }
-
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
