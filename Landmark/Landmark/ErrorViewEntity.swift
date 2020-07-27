@@ -27,7 +27,9 @@ struct ErrorViewPresenter {
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: model.actionButtonTitle,
                                       style: .default, handler: nil))
-        self.controller?.present(alert, animated: true)
+        DispatchQueue.main.async {
+            self.controller?.present(alert, animated: true)
+        }
     }
 }
 

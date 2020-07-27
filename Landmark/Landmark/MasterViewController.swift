@@ -165,6 +165,12 @@ class MasterViewController: UITableViewController {
     }
     
     @objc func composeButtonAction(_ sender: Any) {
+        if currentUser?.email == nil {
+            let evm = ErrorViewEntity(title: "User Not Logged In", message: "Please login or sign up to be able to create notes")
+            let errorViewPresenter = ErrorViewPresenter(withController: self)
+            errorViewPresenter.showAlterView(withViewModel: evm)
+        }
+        
         let vc: UIViewController = UIStoryboard(name: "CreateNote", bundle: nil).instantiateViewController(withIdentifier: "CreateNoteViewController")
         self.present(vc, animated: true) {
             
@@ -172,10 +178,11 @@ class MasterViewController: UITableViewController {
     }
     
     @objc func mapButtonAction(_ sender: Any) {
-        let vc: UIViewController = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "MapViewController")
+        let nav = UIStoryboard(name: "Map", bundle: nil).instantiateViewController(withIdentifier: "MapViewNavigationController")
+        let vc = (nav as? UINavigationController)?.children.first
         let mapvc = vc as! MapViewController
         mapvc.notes = self.objects
-        self.present(vc, animated: true) {
+        self.present(nav, animated: true) {
             
         }
     }

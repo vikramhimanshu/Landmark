@@ -9,22 +9,6 @@
 import UIKit
 import MapKit
 
-private extension MKMapView {
-    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
-                                                  latitudinalMeters: regionRadius,
-                                                  longitudinalMeters: regionRadius)
-        setRegion(coordinateRegion, animated: true)
-    }
-    
-    func centerToCoordinate(_ coordinate: CLLocationCoordinate2D, radius:CLLocationDistance = 1000) {
-        let coordinateRegion = MKCoordinateRegion(center: coordinate,
-                                                  latitudinalMeters: radius,
-                                                  longitudinalMeters: radius)
-        setRegion(coordinateRegion, animated: true)
-    }
-}
-
 class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!

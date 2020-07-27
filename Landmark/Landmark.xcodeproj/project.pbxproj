@@ -11,6 +11,7 @@
 		5B710953CBEC277B6EAD11B5 /* Pods_Landmark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EEA32ABFCCA889D59E8781 /* Pods_Landmark.framework */; };
 		AF59E8C024CC436800302F94 /* ErrorViewEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59E8BF24CC436800302F94 /* ErrorViewEntity.swift */; };
 		AF59E8C224CDB94200302F94 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59E8C124CDB94200302F94 /* MapViewController.swift */; };
+		AF59E8C424CF07FB00302F94 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF59E8C324CF07FA00302F94 /* LocationManager.swift */; };
 		AF9A1CF624C887B400D42674 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1CF524C887B400D42674 /* AppDelegate.swift */; };
 		AF9A1CF824C887B400D42674 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1CF724C887B400D42674 /* SceneDelegate.swift */; };
 		AF9A1CFA24C887B400D42674 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A1CF924C887B400D42674 /* MasterViewController.swift */; };
@@ -63,6 +64,7 @@
 		9BADC753361ED569143C5A0D /* Pods-Landmark-LandmarkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Landmark-LandmarkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Landmark-LandmarkUITests/Pods-Landmark-LandmarkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF59E8BF24CC436800302F94 /* ErrorViewEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewEntity.swift; sourceTree = "<group>"; };
 		AF59E8C124CDB94200302F94 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		AF59E8C324CF07FA00302F94 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		AF9A1CF224C887B400D42674 /* Landmark Remark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Landmark Remark.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF9A1CF524C887B400D42674 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF9A1CF724C887B400D42674 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				AF9A1D3324C9608F00D42674 /* Map.storyboard */,
 				AF59E8BF24CC436800302F94 /* ErrorViewEntity.swift */,
 				AF59E8C124CDB94200302F94 /* MapViewController.swift */,
+				AF59E8C324CF07FA00302F94 /* LocationManager.swift */,
 			);
 			path = Landmark;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				AF9A1D2E24C8991100D42674 /* LoginViewController.swift in Sources */,
 				AF9A1D3224C95F2600D42674 /* CreateNoteViewController.swift in Sources */,
 				AF9A1D3D24C9CF2B00D42674 /* LoginViewModel.swift in Sources */,
+				AF59E8C424CF07FB00302F94 /* LocationManager.swift in Sources */,
 				AF59E8C024CC436800302F94 /* ErrorViewEntity.swift in Sources */,
 				AF9A1CFC24C887B400D42674 /* DetailViewController.swift in Sources */,
 				AF9A1D3F24C9CF4700D42674 /* LoginEntity.swift in Sources */,
