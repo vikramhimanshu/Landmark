@@ -29,6 +29,7 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var usernameLabel: UILabel!
     
 
     func configureView() {
@@ -36,6 +37,9 @@ class DetailViewController: UIViewController {
         if let detail = detailItem {
             if let label = detailDescriptionLabel {
                 label.text = detail.body
+            }
+            if let label = usernameLabel {
+                label.text = "User: " + detail.username
             }
         }
     }

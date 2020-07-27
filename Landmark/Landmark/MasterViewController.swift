@@ -218,9 +218,11 @@ class MasterViewController: UITableViewController {
         if isSearchActive {
             let object = filteredObjects[indexPath.row]
             cell.textLabel!.text = object.displayTitle
+            cell.detailTextLabel?.text = object.username
         } else {
             let object = objects[indexPath.row]
             cell.textLabel!.text = object.displayTitle
+            cell.detailTextLabel?.text = object.username
         }
         return cell
     }
