@@ -28,6 +28,7 @@ class LoginViewController: UITableViewController {
     
     override func viewDidLoad() {
         self.presenter  = LoginPresenter(withController: self)
+        self.passwordField.passwordRules = viewModel.passwordRules
     }
     
     func dismissSelf() {

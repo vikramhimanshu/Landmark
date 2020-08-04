@@ -56,6 +56,12 @@ struct LoginViewModel {
         }
     }
     
+    var passwordRules: UITextInputPasswordRules? {
+        return nil //The below code is for an example and we are retuning nil here because we do not want to set the rule.
+        let rules :[PasswordRule] = [.allowed(.digits), .allowed(.special), .allowed(.upper), .allowed(.lower), .minLength(8), .maxLength(64)]
+        return UITextInputPasswordRules(rules: rules)
+    }
+    
     func loginErrorMessageFor(_ error: Error) -> ErrorAlterViewEntity {
         return ErrorAlterViewEntity(title: "Login Error", message: error.localizedDescription, actionButtonTitle: "Okay")
     }
